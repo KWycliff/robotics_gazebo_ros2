@@ -11,7 +11,7 @@ clc
 ROS_DOMAIN_ID = 0;
 setenv("ROS_DOMAIN_ID", num2str(ROS_DOMAIN_ID))
 setenv("RMW_IMPLEMENTATION", "rmw_fastrtps_cpp")
-setenv("ROS_DISCOVERY_SERVER", "192.168.1.84:11811")
+setenv("ROS_DISCOVERY_SERVER", "192.168.1.86:11811")
 
 % Create a ROS 2 node.
 try

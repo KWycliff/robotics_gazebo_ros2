@@ -7,3 +7,5 @@ convert to a .bag file which can be read by the slam map builder in matlab
 save the recovered map
 this map can be used for montecarlo localisation projects
 and the slam algorithms.  
+
+steps to setup the gazebo environment
