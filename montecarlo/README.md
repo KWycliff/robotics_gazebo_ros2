@@ -22,4 +22,13 @@ ros2 run ros_gz_bridge parameter_bridge /odom@nav_msgs/msg/Odometry@gz.msgs.Odom
 this map can be used for montecarlo localisation projects
 and the slam algorithms.
 
+for gazebo simulation word, here is the bridge:
+Odometry
+ros2 run ros_gz_bridge parameter_bridge \
+  /model/tugbot/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry \
+  --ros-args -r /model/tugbot/odometry:=/odom
 
+Scan 
+ros2 run ros_gz_bridge parameter_bridge \
+  /world/world_demo/model/tugbot/link/scan_omni/sensor/scan_omni/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan \
+  --ros-args -r /world/world_demo/model/tugbot/link/scan_omni/sensor/scan_omni/scan:=/scan
