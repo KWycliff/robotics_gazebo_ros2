@@ -10,13 +10,16 @@ steps to setup the gazebo environment
 
 
 creating a map using the matlab slam map builder
-launch the turtlebot in the gazebo simulation world
-accertain that the scan and odom topics are visible 
-record the data from these topics using the ros2 record
-use the mcap map format
-convert to a .bag file which can be read by the slam map builder in matlab 
-save the recovered map
+1.launch the turtlebot in the gazebo simulation world
+2.create ros2_gazebo bridge 
+ros2 run ros_gz_bridge parameter_bridge /scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan
+ros2 run ros_gz_bridge parameter_bridge /odom@nav_msgs/msg/Odometry@gz.msgs.Odometry
+3.accertain that the scan and odom topics are visible
+4.record the data from these topics using the ros2 record: ros2 bag record -s mcap /scan /odom /tf /tf_static
+5.use the mcap map format
+6.convert to a .bag file which can be read by the slam map builder in matlab:rosbags-convert --src ./montecarlo/rosbag2_2026_04_09-18_13_12/ --dst ./montecarlo/rosbag2_2026_04_09-18_13_12/turtleworld.bag
+7.save the recovered map
 this map can be used for montecarlo localisation projects
-and the slam algorithms.  
+and the slam algorithms.
 
 
